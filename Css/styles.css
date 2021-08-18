@@ -1,0 +1,754 @@
+/*Global styles*/
+:root{
+    --p_color:#01FF94;
+    --s_color:#fff;
+    --t_color: #000; 
+}
+
+*{
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    margin:0;
+    font-family: Noto Sans JP;
+}
+
+body::-webkit-scrollbar {
+    width: 15px;
+}
+body::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px var(--p_color);
+    background:var(--s_color);
+}
+body::-webkit-scrollbar-thumb {
+    height:30%;
+    border-radius: 10px;
+    box-shadow: inset 0 0 6px var(--p_color);
+    background:var(--t_color);
+}
+
+h1, h2, h3, ul{
+    margin: 0;
+}
+
+img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+h1{
+    font-size:3rem;
+}
+
+h2{
+    font-size:2.2rem;
+}
+
+h3{
+    font-size:1.5rem;
+}
+
+.font-light{
+    color:var(--s_color);
+}
+
+.text-bold{
+    font-weight: bold;
+}
+
+.flex-style{
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.grid-style{
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.top{
+    position:relative;
+    z-index: 1;
+}
+
+i{
+    color:var(--p_color);
+    font-size:2.5rem;
+}
+
+
+/*Header*/
+
+/*particles*/
+#particles-js{
+    position:absolute;
+    height:100%;
+    width:100%;
+}
+
+header, #projects{
+    height:100vh;
+    background-color: var(--t_color);
+}
+
+nav{
+    position:fixed;
+    width:55%;
+    padding:0.5rem;
+    left:50%;
+    z-index: 2;
+    background-color: var(--t_color);
+}
+
+#flags{
+    position:absolute;
+    top:20%;
+    left:4%;
+}
+
+#col-flag{
+    background-image: url("../Svg/FlagCo.svg");
+    background-size: cover;
+}
+
+#usa-flag{
+    background-image: url("../Svg/FlagUsa.svg");
+    background-size: cover;
+}
+
+.flag{
+    border:none;
+    width:35px;
+    height:35px;
+    background: none;
+}
+
+.flag:hover, .flag:focus{
+    transform: scale(1.3);
+    cursor:pointer;
+}
+
+.nav-list{
+    list-style: none;
+    margin:0;
+    padding: 0;
+}
+
+.nav-item{
+    color:var(--p_color);
+    text-decoration: none;
+    font-size: 1.5rem;
+    letter-spacing: 0.1rem;
+}
+
+.active-item{
+    color:var(--s_color);
+    border-bottom: 3px solid var(--p_color);
+    border-radius: 5px;
+}
+
+.nav-item:hover, .nav-item:focus{
+    color:var(--s_color);
+    border-bottom: 3px solid var(--p_color);
+    border-radius: 5px;
+}
+
+#content-head{
+    height: 100%;
+}
+
+#content-text{
+    height:80%;
+    width:40%;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#content-svg{
+    border-radius: 30px;
+    height:80%;
+    width:30%;
+    background-color: rgba(255,255,255,0.1);
+}
+
+.typed-text{
+    color: var(--p_color);
+}
+
+.button{
+    width:30%;
+    height:3rem;
+    border-radius:30px;
+    font-size: 1.4rem;
+    background: linear-gradient(135deg, var(--p_color),var(--p_color), var(--t_color));
+    color: var(--t_color);
+    text-decoration: none;
+    letter-spacing: 0.05rem;
+}
+
+.button:hover, .button:focus{
+    background:linear-gradient(135deg, var(--p_color), var(--p_color), var(--s_color));
+    color:var(--t_color);
+}
+
+/*Skills*/
+#skills, #projects{
+    height:100vh;
+    overflow: hidden;
+}
+
+#fondo-skills{
+    position:absolute;
+    height:100%;
+    width:100%;
+    background-image: url("../Svg/Fondo-Skill.svg");
+    background-repeat: no-repeat;
+    z-index: 0;
+}
+
+#skills h2, #projects h2, #contact h2{
+    width:fit-content;
+    position:relative;
+    top:20px;
+    left:40px;
+}
+
+.container{
+    width:90%;
+    height:90%;
+    margin: 0 auto;
+}
+
+.col{
+    width:40%;
+    height:90%;
+    border-radius:30px;
+    background-color:rgba(0,0,0,0.9);
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.square-icon{
+    width:60%;
+    height:60%;
+    border-radius:20px;
+    background-color: var(--s_color);
+}
+
+img{
+    width: 60%;
+    height: 60%;
+}
+
+hr{
+    position:absolute;
+    border: 2px solid var(--t_color);
+    transform: rotate(90deg);
+    width:35%;
+}
+
+#html, #css, #js, 
+#react, #python, #kivy,
+#tk, #sql, #r,
+#figma, #git, #github,
+#minitab, #sixsigma, #autocad,
+#excel, #word, #powerpt{
+    position:relative;
+}
+
+#html::before, #css::before, #js::before, 
+#react::before, #python::before, #kivy::before,
+#tk::before, #sql::before, #r::before,
+#figma::before, #git::before, #github::before,
+#minitab::before, #sixsigma::before, #autocad::before,
+#excel::before, #word::before, #powerpt::before{
+    position:absolute;
+    top:100%;
+    height:0%;
+    width:100%;
+    border-radius:20px;
+    background:var(--p_color);
+    font-size:1.2rem;
+    font-weight: bold;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    opacity:0;
+    transition: all 0.4s ease-in-out;
+}
+
+#html::before{
+    content:"Html";
+}
+
+#css::before{
+    content:"Css";
+}
+
+#js::before{
+    content:"JavaScript";
+}
+
+#react::before{
+    content:"React Js";
+}
+
+#python::before{
+    content:"Python";
+}
+
+#kivy::before{
+    content:"Kivy";
+}
+
+#tk::before{
+    content:"Tk";
+}
+
+#sql::before{
+    content:"SqLite";
+}
+
+#r::before{
+    content:"R";
+}
+#figma::before{
+    content:"Figma";
+}
+#git::before{
+    content:"Git";
+}
+#github::before{
+    content:"Github";
+}
+#minitab::before{
+    content:"Minitab";
+}
+#sixsigma::before{
+    content:"Six Sigma";
+}
+#autocad::before{
+    content:"Autocad";
+}
+#excel::before{
+    content:"Excel";
+}
+#word::before{
+    content:"Word";
+}
+#powerpt::before{
+    content:"Power point";
+    font-size:1rem;
+}
+
+#html:hover::before, #css:hover::before, #js:hover::before,
+#react:hover::before, #python:hover::before, #kivy:hover::before,
+#tk:hover::before, #sql:hover::before, #r:hover::before,
+#figma:hover::before, #git:hover::before, #github:hover::before,
+#minitab:hover::before, #sixsigma:hover::before, #autocad:hover::before,
+#excel:hover::before, #word:hover::before, #powerpt:hover::before{
+    opacity:0.8;
+    top:0%;
+    height:100%;
+}
+
+
+/*Projects*/
+#fondo-projects{
+    position:absolute;
+    height:100%;
+    width:100%;
+    background-image: url("../Svg/Fondo-Project.svg");
+    background-repeat: no-repeat;
+    background-position: 100%;
+    z-index: 0;
+}
+
+#projects h2{
+    color:var(--p_color);
+}
+
+.container-pro{
+    width:90%;
+    height:80%;
+    margin: 3rem auto;
+    padding: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "pro1 pro2 pro4"
+                         "pro1 pro3 seemore";
+    grid-gap: 20px 2rem;
+
+}
+
+.back{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    font-size:1rem;
+    font-weight: bold;
+    transition: all 0.4s ease-in-out;
+    text-align: center;
+}
+
+.backtop{
+    position:absolute;
+    height:50%;
+    width:0%;
+    top:0;
+    left:0;
+    opacity:0;
+    background-color: var(--p_color);
+    transition: all 0.4s ease-in-out;
+}
+
+.backbot{
+    position:absolute;
+    height:50%;
+    width:0%;
+    top:50%;
+    right:0;
+    opacity:0;
+    background-color: var(--p_color);
+    transition: all 0.4s ease-in-out;
+}
+
+.back:hover .backtop, .back:hover .backbot{
+    width:100%;
+    opacity:0.8;
+}
+
+.back i{
+    color:var(--t_color);
+}
+
+.back i:hover{
+    color:var(--s_color);
+}
+
+#pro1{
+    position:relative;
+    overflow: hidden;
+    grid-area: pro1;
+    width:90%;
+    height:95%;
+    background-color:var(--s_color);
+    background-image: url("../Image/Mk-FlipGame.jpg");
+    background-position-x: center;
+    background-size: cover;
+    border-radius:20px;
+}
+
+#pro1:hover::before, #pro1:hover::after{
+    opacity:0.8;
+    width: 100%;
+}
+
+#pro2{
+    grid-area: pro2;
+    position:relative;
+    overflow: hidden;
+    width:90%;
+    height:80%;
+    margin-top:-2rem;
+    background-color:var(--s_color);
+    background-image: url("../Image/Mk-survey.jpg");
+    background-position-x: center;
+    background-size: cover;
+    border-radius:20px;
+}
+
+#pro3{
+    position:relative;
+    overflow: hidden;
+    grid-area: pro3;
+    margin-top:-4rem;
+    width:90%;
+    height:112%;
+    background-color:var(--s_color);
+    background-image: url("../Image/Mk-tribute.jpg");
+    background-position-x: center;
+    background-size: cover;
+    border-radius:20px;
+}
+
+#pro4{
+    position:relative;
+    overflow: hidden;
+    grid-area: pro4;
+    margin-top:3.5rem;
+    width:90%;
+    height:108%;
+    background-color:var(--s_color);
+    background-image: url("../Image/Mk-Tech.jpg");
+    background-position-x: center;
+    background-size: cover;
+    border-radius:20px;
+}
+
+#seeMore{
+    position:relative;
+    overflow: hidden;
+    grid-area: seemore;
+    margin-top:21px;
+    width:90%;
+    height:80%;
+    background:var(--s_color);
+    border-radius:20px;
+}
+
+/*Contact*/
+#contact{
+    height:30vh;
+    background-color: var(--t_color);
+    background-image: url("../Svg/Fondo-footer.svg");
+    flex-direction: column;
+    align-items: space-between;
+}
+
+#contact h2{
+    align-self: flex-start;
+}
+
+#contact h2, h3{
+    color:var(--p_color);
+    text-align:center;
+}
+
+#logos-foot{
+    width:15%;
+    margin:5px auto;
+}
+
+#logos-foot i:hover{
+    color:var(--s_color);
+}
+
+@media (max-width:1200px){
+    nav{
+        left:45%;
+    }
+    
+    #flags{
+        left:1.5%;
+    }
+    
+    .col{
+        width:42%;
+    }
+    
+    .square-icon{
+        width:70%;
+    }    
+}
+
+@media (max-width:1090px){
+    nav{
+        width:100%;
+        left:0%;
+    }
+
+    #flags{
+        left:90%;
+    }
+
+    #content-text{
+        width:47%;
+    }
+    
+    #content-svg{
+        width:40%;
+    }
+
+    #fondo-skills{
+        background-size:75%;
+    }
+
+    #fondo-projects{
+        background-size:75%;
+    }
+
+    .col{
+        width:44%;
+    }
+
+    #logos-foot{
+        width:30%;
+    }
+}
+
+@media (max-width:950px){
+    #fondo-skills{
+        background-size: 110% 100%;
+        background-position-x: 100%;
+    }
+
+    #fondo-projects{
+        background-size: 110% 100%;
+        background-position-x: -100%;
+    }
+
+    .container{
+        width:95%;
+        margin:10% auto;
+        height:75%;
+        justify-content: space-around;
+    }
+
+    .square-icon{
+        width:75%;
+        height:55%;
+    }
+
+    .container-pro{
+        grid-gap:1rem;
+    }
+}
+
+@media (max-width: 750px){
+    #content-head{
+        flex-direction: column;
+    }
+    
+    #content-text{
+        margin-top:10%;
+        height:50%;
+        width:90%;
+        align-items: center;
+        justify-content: space-evenly;
+        text-align: center;
+    }
+    
+    #content-svg{
+        height:30%;
+        width:50%;
+    }
+
+    #flags{
+        position:relative;
+        left:45%;
+    }
+
+    #fondo-skills{
+        background-size: 120% 100%;
+        background-position-x: 50%;
+    }
+
+    #fondo-projects{
+        background-size: 120% 100%;
+        background-position-x: -50%;
+    }
+    
+    .container{
+        flex-direction: column;
+    }
+
+    .col{
+        width:70%;
+        height: 40%;
+    }
+
+    .square-icon{
+        width:60%;
+    }
+
+    hr{
+        transform: rotate(0deg);
+        width:50%;
+    }
+
+    .container-pro{
+        width:95%;
+        max-height:95%;
+        grid-template-columns: repeat(2, 50%);
+        grid-gap:0.2rem;
+        grid-template-areas: "pro1 pro2"
+                         "pro1 pro2" 
+                         "pro3 pro4"
+                         "pro3 pro4" 
+                         "seemore seemore";
+    }
+
+    #pro1, #pro2, #pro3, #pro4, #seeMore{
+        width:90%;
+        height:90%;
+        margin:0;
+    }
+
+    #logos-foot{
+        margin-top:5%;
+        width:50%;
+    }
+}
+
+@media (max-width:500px){
+    h1{
+        font-size:2rem;
+    }
+    
+    h2{
+        font-size:1.5rem;
+    }
+    
+    h3{
+        font-size:1.2rem;
+    }
+    
+    nav{
+        top:90%;
+        padding:0.2rem 0;
+    }
+
+    .nav-item{
+        font-size: 1.1rem;
+    }
+    
+    #flags{
+        position:relative;
+        left:45%;
+    }
+    
+    #content-text{
+        margin:0;
+        height:40%;
+    }
+
+    .button{
+        width:35%;
+        margin-top:1rem;
+    }
+    
+    #content-svg{
+        margin-top:-10px;
+    }
+
+    .container{
+        flex-direction: column;
+    }
+
+    #html::before, #css::before, #js::before, 
+    #react::before, #python::before, #kivy::before,
+    #tk::before, #sql::before, #r::before,
+    #figma::before, #git::before, #github::before,
+    #minitab::before, #sixsigma::before, #autocad::before,
+    #excel::before, #word::before, #powerpt::before{
+        font-size:0.6rem;        
+    }
+
+    #contact{
+        margin-bottom: 4rem;
+    }
+
+    #logos-foot{
+        margin-top:0;
+        width:70%;
+    }
+}
